@@ -1,0 +1,27 @@
+# Cloud Deployment Configuration for Decentralized News Ecosystem
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: news-ecosystem-backend
+  labels:
+    app: decentralized-news
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: decentralized-news
+  template:
+    metadata:
+      labels:
+        app: decentralized-news
+    spec:
+      containers:
+      - name: news-api
+        image: sukumar/news-ecosystem:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: VERIFICATION_THRESHOLD
+          value: "0.95" # 95% filter rate
+        - name: CLOUD_REGION
+          value: "ap-south-1"
