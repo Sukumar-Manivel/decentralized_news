@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from '../services/api';
+import api, { getMediaUrl } from '../services/api';
 import { 
   Download, ShieldCheck, FileCheck, Key, Eye, 
   ExternalLink, Calendar, RefreshCw, AlertCircle, Sparkles
@@ -91,7 +91,7 @@ const PurchasesPage = () => {
       ) : (
         <div className="licenses-grid">
           {purchases.map((p) => {
-            const thumbSrc = `http://localhost:5000/uploads/thumbnails/${p.evidenceId?.thumbnailFile || p.evidenceId?.originalFile}`;
+            const thumbSrc = getMediaUrl(`thumbnails/${p.evidenceId?.thumbnailFile || p.evidenceId?.originalFile}`);
             return (
               <div key={p._id} className="license-card">
                 <div className="license-card-head">

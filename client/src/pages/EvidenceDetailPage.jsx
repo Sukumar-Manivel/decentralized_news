@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import api from '../services/api';
+import api, { getMediaUrl } from '../services/api';
 import SecureMediaViewer from '../components/SecureMediaViewer';
 import PaymentModal from '../components/PaymentModal';
 import { 
@@ -65,8 +65,8 @@ const EvidenceDetailPage = () => {
     );
   }
 
-  // Preview source URL from server
-  const previewSrc = `http://localhost:5000/uploads/previews/${evidence.previewFile || evidence.originalFile}`;
+  // Dynamic preview source URL from server
+  const previewSrc = getMediaUrl(`previews/${evidence.previewFile || evidence.originalFile}`);
 
   return (
     <div className="detail-container">

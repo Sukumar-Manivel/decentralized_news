@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ShieldCheck, Video, Image, Eye, Clock, Award } from 'lucide-react';
+import { getMediaUrl } from '../services/api';
 import './EvidenceCard.css';
 
 const EvidenceCard = ({ evidence }) => {
@@ -23,8 +24,8 @@ const EvidenceCard = ({ evidence }) => {
     }
   };
 
-  // Base URL for uploads
-  const thumbnailSrc = `http://localhost:5000/uploads/thumbnails/${evidence.thumbnailFile || evidence.originalFile}`;
+  // Dynamic URL for uploads
+  const thumbnailSrc = getMediaUrl(`thumbnails/${evidence.thumbnailFile || evidence.originalFile}`);
 
   return (
     <div 

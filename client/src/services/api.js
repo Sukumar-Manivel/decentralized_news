@@ -1,7 +1,20 @@
 import axios from 'axios';
 
+// Dynamic API Base URL: Localhost for dev, Render cloud for production
+const API_BASE_URL = import.meta.env.VITE_API_URL || 
+  (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+    ? 'http://localhost:5000/api' 
+    : 'https://citizenlens-api.onrender.com/api');
+
+export const getMediaUrl = (subPath) => {
+  const host = typeof window !== 'undefined' && window.location.hostname === 'localhost'
+    ? 'http://localhost:5000'
+    : 'https://citizenlens-api.onrender.com';
+  return `${host}/uploads/${subPath}`;
+};
+
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: API_BASE_URL,
 });
 
 // Add a request interceptor
