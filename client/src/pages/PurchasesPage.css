@@ -1,0 +1,273 @@
+.purchases-container {
+  min-height: calc(100vh - 70px);
+  padding: 2.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.purchases-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.purchases-header h1 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.purchases-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.refresh-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.refresh-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+.licenses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.license-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.2s;
+}
+
+.license-card:hover {
+  border-color: #00c853;
+}
+
+.license-card-head {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.license-thumb {
+  width: 75px;
+  height: 55px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #000;
+  border: 1px solid var(--border);
+}
+
+.license-title-box h3 {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.license-date {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.license-details-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  background: var(--bg-secondary);
+  padding: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.detail-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.dp-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.dp-val {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-green {
+  color: #00c853;
+}
+
+.license-card-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.download-master-btn {
+  flex: 1.3;
+  background: #00c853;
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.download-master-btn:hover {
+  background: #00a844;
+}
+
+.inspect-wm-btn {
+  flex: 1;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.inspect-wm-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+/* Inspection Modal */
+.inspection-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  max-width: 540px;
+  width: 100%;
+}
+
+.insp-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.insp-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0, 200, 83, 0.12);
+  color: #00c853;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insp-head h2 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.insp-head p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.signature-code-block {
+  background: #0d0d14;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.signature-code-block pre {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #00c853;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.close-insp-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Empty & Loading */
+.purchases-empty,
+.purchases-loading,
+.purchases-error {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.empty-icon {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.explore-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  cursor: pointer;
+}
