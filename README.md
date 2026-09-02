@@ -45,11 +45,11 @@ graph TD
     end
 
     subgraph "Backend API (Express.js)"
-        API_Auth[/api/auth]
-        API_Evidence[/api/evidence]
-        API_Payment[/api/payment]
-        API_Download[/api/download]
-        API_User[/api/user]
+        API_Auth["/api/auth"]
+        API_Evidence["/api/evidence"]
+        API_Payment["/api/payment"]
+        API_Download["/api/download"]
+        API_User["/api/user"]
     end
 
     subgraph "Automated Agents"
